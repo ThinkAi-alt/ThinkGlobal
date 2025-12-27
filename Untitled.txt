@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThinkGlobal Travel</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>ThinkGlobal 🌍</h1>
+      <ul>
+        <li><a href="#estimate">Estimator</a></li>
+        <li><a href="#maps">Maps</a></li>
+        <li><a href="#themeparks">Theme Parks</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#hotels">Hotels</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Plan Smarter. Travel Better.</h2>
+    <p>Explore destinations, estimate costs, and adapt like a local.</p>
+  </section>
+
+  <!-- Trip Estimator -->
+  <section id="estimate">
+    <h3>Trip Cost Estimator</h3>
+    <form id="estimator-form">
+      <label>Destination: <input type="text" id="destination"></label>
+      <label>Days: <input type="number" id="days"></label>
+      <label>Budget Level:
+        <select id="budget">
+          <option value="50">Budget</option>
+          <option value="150">Mid-range</option>
+          <option value="300">Luxury</option>
+        </select>
+      </label>
+      <button type="submit">Estimate</button>
+    </form>
+    <div id="estimate-result"></div>
+  </section>
+
+  <!-- Maps -->
+  <section id="maps">
+    <h3>Interactive Map</h3>
+    <div id="map" style="height:400px;"></div>
+  </section>
+
+  <!-- Theme Parks -->
+  <section id="themeparks">
+    <h3>Theme Park Maps</h3>
+    <ul>
+      <li><a href="https://disneyworld.disney.go.com/maps/">Disney World</a></li>
+      <li><a href="https://www.universalorlando.com/web/en/us/plan-your-visit/maps-directions">Universal Orlando</a></li>
+    </ul>
+  </section>
+
+  <!-- Food & Attractions -->
+  <section id="food">
+    <h3>Food & Attractions</h3>
+    <div class="cards"></div>
+  </section>
+
+  <!-- Travel Tips -->
+  <section id="tips">
+    <h3>Adaptation Tips</h3>
+    <p>Learn local customs, language basics, and cultural etiquette before you go.</p>
+  </section>
+
+  <!-- Hotels -->
+  <section id="hotels">
+    <h3>Hotel Options</h3>
+    <table>
+      <tr><th>Name</th><th>Price</th><th>Amenities</th></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2025 ThinkGlobal Travel</p>
+  </footer>
+</body>
+</html>

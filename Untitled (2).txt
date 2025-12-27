@@ -1,0 +1,69 @@
+// Trip Estimator
+document.getElementById("estimator-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const days = parseInt(document.getElementById("days").value);
+  const budget = parseInt(document.getElementById("budget").value);
+  const destination = document.getElementById("destination").value;
+
+  if (!days || !destination) {
+    document.getElementById("estimate-result").innerText = "Please enter all fields.";
+    return;
+  }
+
+  const total = days * budget;
+  document.getElementById("estimate-result").innerText =
+    `Estimated cost for ${days} days in ${destination}: $${total}`;
+
+  // Load hotels and food recommendations dynamically
+  loadHotels(destination);
+  loadFood(destination);
+});
+
+// Hotels (stubbed API call)
+async function loadHotels(destination) {
+  // Replace with real API like Booking.com
+  const hotels = [
+    { name: "Hotel A", price: 120, amenities: ["WiFi", "Pool"] },
+    { name: "Hotel B", price: 90, amenities: ["Breakfast", "Gym"] }
+  ];
+
+  const table = document.querySelector("#hotels table");
+  table.innerHTML = "<tr><th>Name</th><th>Price</th><th>Amenities</th></tr>";
+
+  hotels.forEach(hotel => {
+    const row = `<tr>
+      <td>${hotel.name}</td>
+      <td>$${hotel.price}/night</td>
+      <td>${hotel.amenities.join(", ")}</td>
+    </tr>`;
+    table.innerHTML += row;
+  });
+}
+
+// Food & Attractions (stubbed Yelp API call)
+async function loadFood(destination) {
+  // Replace with Yelp API call
+  const places = [
+    { name: "Local Eatery", rating: 4.5, address: "123 Main St" },
+    { name: "Top Attraction", rating: 4.8, address: "456 Park Ave" }
+  ];
+
+  const container = document.querySelector("#food .cards");
+  container.innerHTML = "";
+  places.forEach(place => {
+    const card = `<div class="card">
+      <h4>${place.name}</h4>
+      <p>Rating: ${place.rating} ⭐</p>
+      <p>${place.address}</p>
+    </div>`;
+    container.innerHTML += card;
+  });
+}
+
+// Map (Google Maps API)
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 40.7128, lng: -74.0060 }, // Default: NYC
+    zoom: 10
+  });
+}

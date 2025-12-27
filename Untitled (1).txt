@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+header {
+  background: teal;
+  color: white;
+  padding: 1rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.hero {
+  background: coral;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+section {
+  padding: 2rem;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1 1 200px;
+}
+footer {
+  background: teal;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
